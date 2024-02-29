@@ -7,11 +7,11 @@ function NavBar() {
   return (
     <>
       <div id="nav-container">
-      <Link to="/">Full Roster</Link>
+      <Link to="/">FULL ROSTER</Link>
       <br/>
-      <Link to="/player/:id">Player Profile</Link>
-      <br/>
-      <Link to={`/dummyPlayers/${id}`}>Featured Pup</Link>
+      <Link to="/player/:id">PLAYER PROFILE</Link>
+      {/* <br/>
+      <Link to={`/dummyPlayers/${id}`}>Featured Pup</Link> */}
       </div>
     </>
   )

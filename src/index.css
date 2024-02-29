@@ -36,6 +36,10 @@ body {
 
 form{
   color: aliceblue;
+  justify-content: space-evenly;
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
 }
 
 h1 {
@@ -117,6 +121,10 @@ button:focus-visible {
   cursor: pointer;
   transition: border-color 0.25s;
   color: aliceblue
+}
+
+#submit:hover{
+  border-color: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {
