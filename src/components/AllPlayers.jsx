@@ -1,5 +1,5 @@
 import NewPlayerForm from "./NewPlayerForm"
-import { useGetPlayersQuery } from "../API/playersSlice"
+import { useGetPlayersQuery, useDeletePlayerMutation } from "../API/playersSlice"
 import SinglePlayer from "./SinglePlayer";
 import { useNavigate } from "react-router-dom";
 
@@ -41,8 +41,10 @@ function AllPlayers() {
   // }
   // ]
 
-  const {data ={} , isLoading} = useGetPlayersQuery();
+  const {data , isLoading, refetch} = useGetPlayersQuery();
   const allPlayers = data?.data?.players
+
+  const [deletePlayer, result] = useDeletePlayerMutation();
 
   const navigate = useNavigate()
 
@@ -59,7 +61,11 @@ function AllPlayers() {
         <p>{player.breed}</p>
         <button onClick={() => navigate(`/players/${player.id}`)}>PLAYER PROFILE</button>
         <br/>
-        <button>REMOVE FROM ROSTER</button>
+        <button
+          onClick={async () => {
+            await deletePlayer(player.id);
+            refetch();
+          }}>REMOVE FROM ROSTER</button>
         </div>
     ))}
     </div>

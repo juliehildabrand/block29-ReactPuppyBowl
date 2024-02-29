@@ -14,7 +14,7 @@ const player = data?.data.player;
     <>
       <h2>PLAYER PROFILE</h2>
       {isLoading && <p>Loading data...</p>}
-      {!isLoading && <div>
+      {!isLoading && <div id="player-card">
         <p>{player.name}</p>
         <img src={player.imageUrl} width="300"/>
         <p>{player.breed}</p>

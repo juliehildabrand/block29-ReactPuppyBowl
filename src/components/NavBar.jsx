@@ -8,10 +8,6 @@ function NavBar() {
     <>
       <div id="nav-container">
       <Link to="/">FULL ROSTER</Link>
-      <br/>
-      <Link to="/player/:id">PLAYER PROFILE</Link>
-      {/* <br/>
-      <Link to={`/dummyPlayers/${id}`}>Featured Pup</Link> */}
       </div>
     </>
   )
